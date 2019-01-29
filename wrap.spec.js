@@ -11,6 +11,6 @@ describe('wrap', () => {
   });
 
   it('Returns a string on multiple lines no more than max length', () => {
-    expect(wrap('How are you doing? I am great!', 10)).to.equal('How are \nyou doing? \nI am \ngreat!');
+    expect(wrap('How are you doing? I am great!', 10)).to.equal('How are\nyou doing?\nI am\ngreat!');
   });
 });
