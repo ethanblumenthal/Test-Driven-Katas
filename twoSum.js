@@ -1,14 +1,18 @@
-const twoSum = (arr, target) => {
-  if (arr.length < 2) {
+const twoSum = (numbers, target) => {
+  if (numbers.length < 2) {
     return [];
   }
 
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; i++) {
-      if (arr[i] + arr[j] === target) {
-        return [i, j];
-      }
+  const seen = {};
+
+  for (let i = 0; i < numbers.length; i++) {
+    const currentNum = numbers[i];
+    const numToFind = target - currentNum;
+
+    if (seen[numToFind] !== undefined) {
+      return [seen[numToFind], i];
     }
+    seen[currentNum] = i;
   }
   return [];
 };
